@@ -2,6 +2,7 @@ import {
     prDivide,
     prMultiply,
     prSubtract,
+    prLess
 } from './PromisedHomework/binary.js'
 import { prPush, prGet } from './PromisedHomework/array.js'
 const { AsyncArray } = Homework
@@ -39,6 +40,11 @@ export default async function calcTriangleArea(x1, y1, x2, y2, x3, y3, cb) {
 
     // Деление на 2 по формуле
     let area = await prDivide(substracted, 2)
+
+    // Если результат отрицительный, то надо поменять знак
+    if (await prLess(area, 0)) {
+        area = await prSubtract(0, area)
+    }
 
     cb(area)
     return area

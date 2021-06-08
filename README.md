@@ -37,7 +37,9 @@ async function calcTriangleArea(x1, y1, x2, y2, x3, y3, cb) {
 
     let area = await prDivide(substracted, 2)
 
-    const area = await dividePr(substracted, 2)
+    if (await prLess(area, 0)) {
+        area = await prSubtract(0, area)
+    }
 
     cb(area)
     return area

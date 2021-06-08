@@ -2,7 +2,7 @@ const {
     subtract,
     multiply,
     divide,
-    divide
+    less
 } = Homework
 
 function promised(a, b, fn) {
@@ -22,4 +22,7 @@ export function prMultiply(a, b) {
 export function prDivide(a, b) {
     return promised(a, b, divide)
 }
+
+export function prLess(a, b) {
+    return promised(a, b, less)
 }
