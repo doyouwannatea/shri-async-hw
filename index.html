@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Домашка по асинхронности 😐👍</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container flex-column screen-height">
+        <h1 class="title">Посчитать площадь треугольника.</h1>
+        <h2 class="subtitle">Вариант 4</h2>
+
+        <form class="form">
+            <div class="form__wrapper">
+
+                <div class="form__input-wrapper">
+                    <div class="form__input-title">Точка A</div>
+
+                    <input id="x1" placeholder="Введите x1" required="" aria-required="true" type="number" value="0">
+                    <input id="y1" placeholder="Введите y1" required="" aria-required="true" type="number" value="0">
+                </div>
+
+                <div class="form__input-wrapper">
+                    <div class="form__input-title">Точка B</div>
+
+                    <input id="x2" placeholder="Введите x2" required="" aria-required="true" type="number" value="10">
+                    <input id="y2" placeholder="Введите y2" required="" aria-required="true" type="number" value="0">
+                </div>
+
+                <div class="form__input-wrapper">
+                    <div class="form__input-title">Точка C</div>
+
+                    <input id="x3" placeholder="Введите x3" required="" aria-required="true" type="number" value="10">
+                    <input id="y3" placeholder="Введите y3" required="" aria-required="true" type="number" value="10">
+                </div>
+
+            </div>
+
+            <footer class="form__footer">
+                <button id="submit-btn" class="form__btn btn">Посчитать</button>
+                <span id="area-result"></span>
+            </footer>
+        </form>
+
+        <div class="canvas-wrapper">
+            <canvas id="canvas" class="canvas"></canvas>
+        </div>
+
+    </div>
+    <script src="shri-async-hw.js"></script>
+    <script type="module" src="script.js"></script>
+</body>
+
+</html>
