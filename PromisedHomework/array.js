@@ -1,10 +1,10 @@
-export function pushPr(arr, value) {
+export function prPush(arr, value) {
     return new Promise(resolve => {
         arr.push(value, resolve)
     })
 }
 
-export function getPr(arr, index) {
+export function prGet(arr, index) {
     return new Promise(resolve => {
         arr.get(index, resolve)
     })

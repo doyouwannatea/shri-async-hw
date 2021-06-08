@@ -1,4 +1,4 @@
-import { multiplyPr } from '../PromisedHomework/binary.js'
+import { prMultiply } from '../PromisedHomework/binary.js'
 
 function testAsyncFunc() {
     return new Promise((resolve, reject) => {
@@ -16,9 +16,9 @@ function testAsyncFunc() {
 // Промисы для теста
 // --------------------------------------------------
 const promises = [
-    multiplyPr(1, 1),
-    multiplyPr(2, 5),
-    multiplyPr(5, 5),
+    prMultiply(1, 1),
+    prMultiply(2, 5),
+    prMultiply(5, 5),
     testAsyncFunc()
 ]
 

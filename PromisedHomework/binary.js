@@ -1,23 +1,25 @@
 const {
     subtract,
     multiply,
+    divide,
     divide
 } = Homework
 
-export function subtractPr(a, b) {
+function promised(a, b, fn) {
     return new Promise(resolve => {
-        subtract(a, b, resolve)
+        fn(a, b, resolve)
     })
 }
 
-export function multiplyPr(a, b) {
-    return new Promise(resolve => {
-        multiply(a, b, resolve)
-    })
+export function prSubtract(a, b) {
+    return promised(a, b, subtract)
 }
 
-export function dividePr(a, b) {
-    return new Promise(resolve => {
-        divide(a, b, resolve)
-    })
+export function prMultiply(a, b) {
+    return promised(a, b, multiply)
+}
+
+export function prDivide(a, b) {
+    return promised(a, b, divide)
+}
 }

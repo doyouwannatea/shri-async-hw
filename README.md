@@ -20,20 +20,23 @@ function(x1: Number, y1: Number, x2: Number, y2: Number, x3: Number, y3: Number,
 ```js
 async function calcTriangleArea(x1, y1, x2, y2, x3, y3, cb) {
     const operands = new AsyncArray()
-    await pushPr(operands, subtractPr(x2, x1))
-    await pushPr(operands, subtractPr(y3, y1))
-    await pushPr(operands, subtractPr(x3, x1))
-    await pushPr(operands, subtractPr(y2, y1))
+    await prPush(operands, prSubtract(x2, x1))
+    await prPush(operands, prSubtract(y3, y1))
+    await prPush(operands, prSubtract(x3, x1))
+    await prPush(operands, prSubtract(y2, y1))
 
     const multipliedOperands = new AsyncArray([
-        multiplyPr(await getPr(operands, 0), await getPr(operands, 1)),
-        multiplyPr(await getPr(operands, 2), await getPr(operands, 3))
+        prMultiply(await prGet(operands, 0), await prGet(operands, 1)),
+        prMultiply(await prGet(operands, 2), await prGet(operands, 3))
     ])
 
-    const substracted = await subtractPr(
-        await getPr(multipliedOperands, 0),
-        await getPr(multipliedOperands, 1)
+    const substracted = await prSubtract(
+        await prGet(multipliedOperands, 0),
+        await prGet(multipliedOperands, 1)
     )
+
+    let area = await prDivide(substracted, 2)
+
     const area = await dividePr(substracted, 2)
 
     cb(area)
@@ -47,14 +50,14 @@ async function calcTriangleArea(x1, y1, x2, y2, x3, y3, cb) {
 ### Пример
 
 ```js
-function subtractPr(a, b) {
+function prSubtract(a, b) {
     return new Promise(resolve => {
         subtract(a, b, resolve)
     })
 }
 ```
 
-Функция `subtractPr`[Subtract Promised] возвращает Promise, который резолвится когда Homework.substract высчитает значение.  
+Функция `prSubtract`[Promised Subtract] возвращает Promise, который резолвится когда Homework.substract высчитает значение.  
 
 ### GUI
 
