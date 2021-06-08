@@ -33,6 +33,7 @@ export default async function calcTriangleArea(x1, y1, x2, y2, x3, y3, cb) {
         await getPr(multipliedOperands, 0),
         await getPr(multipliedOperands, 1)
     )
+    
     const area = await dividePr(substracted, 2)
 
     cb(area)
